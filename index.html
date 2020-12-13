@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Books</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+    function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += `<img src=${item.volumeInfo.imageLinks.thumbnail}></img><br>${item.volumeInfo.title}<br><br>`;
+      }
+    }
+    </script>
+    <!-- <script src="https://www.googleapis.com/books/v1/volumes?q=mythology&callback=handleResponse"></script> -->
+    <script src="https://www.googleapis.com/books/v1/volumes?q=book&maxResults=10&key=AIzaSyDEmy-vCEHfQFT8sqC9N7wULEVHorsLUT4&callback=handleResponse"></script>
+
+</body>
+</html>
