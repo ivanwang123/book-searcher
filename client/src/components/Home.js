@@ -12,9 +12,9 @@ function Home(props) {
         if (search.length) {
             let url = '';
             switch(category) {
-                case 'book': url = `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40&key=AIzaSyDEmy-vCEHfQFT8sqC9N7wULEVHorsLUT4`; break;
-                case 'genre': url = `https://www.googleapis.com/books/v1/volumes?q=+subject:${search}&maxResults=40&key=AIzaSyDEmy-vCEHfQFT8sqC9N7wULEVHorsLUT4`; break;
-                case 'author': url = `https://www.googleapis.com/books/v1/volumes?q=+inauthor:${search}&maxResults=40&key=AIzaSyDEmy-vCEHfQFT8sqC9N7wULEVHorsLUT4`; break;
+                case 'book': url = `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40&key=${process.env.GOOGLE_API_KEY}`; break;
+                case 'genre': url = `https://www.googleapis.com/books/v1/volumes?q=+subject:${search}&maxResults=40&key=${process.env.GOOGLE_API_KEY}`; break;
+                case 'author': url = `https://www.googleapis.com/books/v1/volumes?q=+inauthor:${search}&maxResults=40&key=${process.env.GOOGLE_API_KEY}`; break;
             }
 
             if (url.length)

@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCDcOmtPpEuU6OBlgsDwHuMaCLZoGxQFLw",
+    apiKey: process.env.FIREBASE_KEY,
     authDomain: "books-bb0cd.firebaseapp.com",
     databaseURL: "https://books-bb0cd.firebaseio.com",
     projectId: "books-bb0cd",
